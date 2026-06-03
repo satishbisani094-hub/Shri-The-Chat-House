@@ -18,7 +18,6 @@ export default function Footer({ onNavClick }: FooterProps) {
     { id: 'about', label: 'Culinary Story' },
     { id: 'menu', label: 'Popular Menu' },
     { id: 'why-us', label: 'Our Promises' },
-    { id: 'reviews', label: 'Guest Reviews' },
     { id: 'gallery', label: 'Photo Stream' },
     { id: 'location', label: 'Find Us' },
     { id: 'contact', label: 'Inquiries' }
@@ -27,10 +26,10 @@ export default function Footer({ onNavClick }: FooterProps) {
   return (
     <footer id="footer-section" className="bg-stone-950 text-stone-300 pt-16 pb-8 border-t border-stone-900 scroll-mt-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Footer Top Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-12 border-b border-stone-900">
-          
+
           {/* Logo & Info Brief (4 cols) */}
           <div className="lg:col-span-5 space-y-5 text-left">
             <button
@@ -44,7 +43,7 @@ export default function Footer({ onNavClick }: FooterProps) {
                 <span className="text-red-500">Shri</span> <span className="text-orange-500 font-bold">The</span> <span className="text-yellow-400">Chat House</span>
               </span>
             </button>
-            
+
             <p className="text-xs sm:text-sm text-stone-400 font-semibold leading-relaxed">
               Serving the finest, crispiest, and most hygienic range of authentic Indian street foods, savory chaats, fast-food wonders, and hot ginger tea in Suchitra, Hyderabad.
             </p>
@@ -86,7 +85,7 @@ export default function Footer({ onNavClick }: FooterProps) {
           {/* Contact Details Column (4 cols) */}
           <div className="lg:col-span-4 space-y-4 text-left">
             <h3 className="font-extrabold text-xs uppercase tracking-widest text-[#ffd324]">Contact Hub</h3>
-            
+
             <div className="space-y-3.5 text-xs sm:text-sm">
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-red-500 shrink-0 mt-0.5" />

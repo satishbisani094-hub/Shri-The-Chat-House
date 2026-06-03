@@ -23,7 +23,6 @@ export default function Header({ onNavClick, activeSection }: HeaderProps) {
     { id: 'about', label: 'About Us' },
     { id: 'menu', label: 'Popular Menu' },
     { id: 'why-us', label: 'Why Choose Us' },
-    { id: 'reviews', label: 'Reviews' },
     { id: 'gallery', label: 'Gallery' },
     { id: 'location', label: 'Location' },
     { id: 'contact', label: 'Contact Us' },
@@ -37,11 +36,10 @@ export default function Header({ onNavClick, activeSection }: HeaderProps) {
   return (
     <nav
       id="main-navbar"
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled
           ? 'bg-white shadow-md py-3 border-b border-orange-100'
           : 'bg-white/95 backdrop-blur-md md:bg-transparent py-4'
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
@@ -75,11 +73,10 @@ export default function Header({ onNavClick, activeSection }: HeaderProps) {
                   id={`nav-item-desktop-${item.id}`}
                   key={item.id}
                   onClick={() => handleItemClick(item.id)}
-                  className={`px-3 py-2 rounded-lg text-sm font-semibold tracking-wide transition-all duration-300 ${
-                    isActive
+                  className={`px-3 py-2 rounded-lg text-sm font-semibold tracking-wide transition-all duration-300 ${isActive
                       ? 'text-red-600 bg-red-50'
                       : 'text-gray-700 hover:text-red-500 hover:bg-orange-50/55'
-                  }`}
+                    }`}
                 >
                   {item.label}
                 </button>
@@ -124,11 +121,10 @@ export default function Header({ onNavClick, activeSection }: HeaderProps) {
                   id={`nav-item-mobile-${item.id}`}
                   key={item.id}
                   onClick={() => handleItemClick(item.id)}
-                  className={`w-full text-left px-4 py-3 rounded-xl text-base font-bold transition-all ${
-                    isActive
+                  className={`w-full text-left px-4 py-3 rounded-xl text-base font-bold transition-all ${isActive
                       ? 'bg-gradient-to-r from-red-50 to-orange-50 text-red-600 border-l-4 border-red-600'
                       : 'text-gray-700 hover:bg-orange-50/40 hover:text-red-500'
-                  }`}
+                    }`}
                 >
                   {item.label}
                 </button>

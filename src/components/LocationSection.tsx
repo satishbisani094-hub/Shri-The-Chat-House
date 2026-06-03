@@ -2,13 +2,13 @@ import React from 'react';
 import { MapPin, Phone, Clock, Compass, Navigation } from 'lucide-react';
 
 export default function LocationSection() {
-  
+
   const googleMapsUrl = 'https://www.google.com/maps/dir/?api=1&destination=Shri+The+Chat+House+Plot+No.+64+Raghavendra+Colony+Road+Suchitra+Aeronautic+Enclave+Quthbullapur+Hyderabad+Telangana+500067';
 
   return (
     <section id="location" className="py-20 md:py-28 bg-stone-50 overflow-hidden scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Title Content */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <span className="inline-flex items-center space-x-1.5 bg-yellow-100 text-yellow-800 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
@@ -25,7 +25,7 @@ export default function LocationSection() {
 
         {/* Location Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          
+
           {/* Column 1: Map Embed */}
           <div className="lg:col-span-7 h-[350px] sm:h-[450px] lg:h-auto rounded-3xl overflow-hidden shadow-md border-4 border-white ring-1 ring-orange-100 flex">
             <iframe

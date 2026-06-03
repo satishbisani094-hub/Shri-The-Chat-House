@@ -2,5 +2,7 @@
   "name": "Shri The Chat House",
   "description": "A modern, responsive promotional website for Shri The Chat House, Hyderabad's favorite street food and chat destination featuring authentic flavors, popular menu items, and custom online inquiry management.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

@@ -9,7 +9,7 @@ export default function Gallery() {
   return (
     <section id="gallery" className="py-20 md:py-28 bg-white scroll-mt-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Title Group */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <span className="inline-flex items-center space-x-1.5 bg-orange-100 text-orange-700 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">

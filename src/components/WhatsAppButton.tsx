@@ -2,7 +2,7 @@ import React from 'react';
 import { MessageSquare } from 'lucide-react';
 
 export default function WhatsAppButton() {
-  
+
   const text = encodeURIComponent('Hello Shri The Chat House! I am looking at your online promotional website and would love to ask about availability / catering packages.');
   const waLink = `https://wa.me/919963233899?text=${text}`;
 
@@ -16,7 +16,7 @@ export default function WhatsAppButton() {
       title="Chat on WhatsApp"
     >
       <MessageSquare className="h-6 w-6 sm:h-7 sm:w-7 fill-white" />
-      
+
       {/* Dynamic tooltip appearing on hover */}
       <span className="absolute right-14 bg-stone-900 text-white text-[10px] font-extrabold tracking-wider uppercase py-1.5 px-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-stone-800 pointer-events-none shadow-md">
         WhatsApp Order Chat

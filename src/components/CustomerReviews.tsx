@@ -6,7 +6,7 @@ export default function CustomerReviews() {
   return (
     <section id="reviews" className="py-20 md:py-28 bg-stone-50 overflow-hidden scroll-mt-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Title Block */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <span className="inline-flex items-center space-x-1.5 bg-red-100 text-red-700 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
@@ -55,7 +55,7 @@ export default function CustomerReviews() {
                 <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-gradient-to-tr from-red-500 via-orange-500 to-yellow-400 text-white font-extrabold flex items-center justify-center text-sm shadow-md">
                   {review.avatarInitials}
                 </div>
-                
+
                 <div className="text-left">
                   <h4 className="font-extrabold text-sm text-stone-900 leading-tight">
                     {review.author}

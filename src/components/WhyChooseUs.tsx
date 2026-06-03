@@ -3,7 +3,7 @@ import { Utensils, ShieldCheck, Sparkles, IndianRupee, Clock, Users, Flame } fro
 import { WHY_CHOOSE_US } from '../data';
 
 export default function WhyChooseUs() {
-  
+
   // Custom helper mapping icon strings to Lucide components
   const getIcon = (iconName: string) => {
     switch (iconName) {
@@ -27,7 +27,7 @@ export default function WhyChooseUs() {
   return (
     <section id="why-us" className="py-20 md:py-28 bg-white border-t border-b border-orange-50/50 scroll-mt-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Title Content */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <span className="inline-flex items-center space-x-1.5 bg-yellow-100 text-yellow-800 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
@@ -64,7 +64,7 @@ export default function WhyChooseUs() {
               <p className="text-stone-500 text-xs sm:text-sm font-semibold leading-relaxed">
                 {item.description}
               </p>
-              
+
               {/* Highlight ribbon accent */}
               <div className="absolute bottom-0 left-8 right-8 h-1 bg-gradient-to-r from-red-500 to-orange-400 transform scale-x-0 group-hover:scale-x-105 transition-transform duration-300 rounded-t-full" />
             </div>

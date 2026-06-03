@@ -8,14 +8,14 @@ export default function AboutUs() {
     <section id="about" className="py-20 md:py-28 bg-white overflow-hidden scroll-mt-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
+
           {/* Left Column: Story Representation */}
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center space-x-1.5 bg-orange-50 text-orange-600 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
               <Sparkles className="h-4 w-4 text-orange-500 animate-pulse" />
               <span>HYDERABAD'S FAVORITE SPOT</span>
             </div>
-            
+
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-stone-900 leading-tight">
               Crafting Happiness, <br />
               <span className="bg-gradient-to-r from-red-600 via-orange-500 to-amber-500 bg-clip-text text-transparent">One Purii at a Time!</span>
@@ -37,7 +37,7 @@ export default function AboutUs() {
                   <p className="text-xs text-stone-500 font-semibold mt-0.5">RO Purified water, gloves, and daily sanitized fryers.</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start space-x-3.5 p-4 rounded-xl bg-amber-50/50 border border-amber-100/60 transition-transform hover:scale-[1.01]">
                 <div className="p-2 sm:p-2.5 bg-amber-500 text-white rounded-lg shadow-md shrink-0">
                   <Compass className="h-5 w-5" />
@@ -58,7 +58,7 @@ export default function AboutUs() {
           {/* Right Column: Dynamic Visual Presentation */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-sm lg:max-w-none">
-              
+
               {/* Main Image Framing */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white ring-8 ring-stone-100 transition-transform hover:rotate-1 duration-300">
                 <img
@@ -67,10 +67,10 @@ export default function AboutUs() {
                   className="w-full h-auto object-cover object-center aspect-[4/3] sm:aspect-square lg:aspect-[4/5] scale-102"
                   referrerPolicy="no-referrer"
                 />
-                
+
                 {/* Image Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-transparent to-transparent" />
-                
+
                 <div className="absolute bottom-6 left-6 right-6 text-white text-left">
                   <p className="text-xs font-bold uppercase tracking-widest text-[#ffd324]">Our Kitchen Vow</p>
                   <h4 className="text-lg font-bold mt-1">Fresh ingredients & pure RO drinking water prepare every bite.</h4>

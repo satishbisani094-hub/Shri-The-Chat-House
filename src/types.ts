@@ -42,3 +42,8 @@ export interface ContactInquiry {
   date: string;
   isRead: boolean;
 }
+
+export interface CartItem {
+  menuItem: MenuItem;
+  quantity: number;
+}

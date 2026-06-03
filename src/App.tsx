@@ -9,19 +9,58 @@ import Hero from './components/Hero';
 import AboutUs from './components/AboutUs';
 import PopularMenu from './components/PopularMenu';
 import WhyChooseUs from './components/WhyChooseUs';
-import CustomerReviews from './components/CustomerReviews';
 import Gallery from './components/Gallery';
 import LocationSection from './components/LocationSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import ScrollToTop from './components/ScrollToTop';
-import { Utensils, Flame } from 'lucide-react';
+import CartDrawer from './components/CartDrawer';
+import { Utensils, Flame, ShoppingBag } from 'lucide-react';
+import { MenuItem, CartItem } from './types';
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadingText, setLoadingText] = useState('Selecting fresh ingredients...');
   const [activeSection, setActiveSection] = useState('hero');
+
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const handleAddToCart = (item: MenuItem) => {
+    setCartItems((prevItems) => {
+      const existing = prevItems.find((i) => i.menuItem.id === item.id);
+      if (existing) {
+        return prevItems.map((i) =>
+          i.menuItem.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
+        );
+      }
+      return [...prevItems, { menuItem: item, quantity: 1 }];
+    });
+    setIsCartOpen(true);
+  };
+
+  const handleUpdateQuantity = (itemId: string, newQty: number) => {
+    if (newQty <= 0) {
+      handleRemoveItem(itemId);
+      return;
+    }
+    setCartItems((prevItems) =>
+      prevItems.map((i) =>
+        i.menuItem.id === itemId ? { ...i, quantity: newQty } : i
+      )
+    );
+  };
+
+  const handleRemoveItem = (itemId: string) => {
+    setCartItems((prevItems) => prevItems.filter((i) => i.menuItem.id !== itemId));
+  };
+
+  const handleClearCart = () => {
+    setCartItems([]);
+  };
+
+  const totalCartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   // Loading text rotation sequence
   useEffect(() => {
@@ -54,7 +93,7 @@ export default function App() {
   useEffect(() => {
     if (isLoading) return;
 
-    const sections = ['hero', 'about', 'menu', 'why-us', 'reviews', 'gallery', 'location', 'contact'];
+    const sections = ['hero', 'about', 'menu', 'why-us', 'gallery', 'location', 'contact'];
     const observers = sections.map((sectionId) => {
       const el = document.getElementById(sectionId);
       if (!el) return null;
@@ -148,13 +187,11 @@ export default function App() {
         <AboutUs />
 
         {/* 3. Popular Food Menu Item Cards filter list */}
-        <PopularMenu />
+        <PopularMenu cartItems={cartItems} onAddToCart={handleAddToCart} onUpdateQuantity={handleUpdateQuantity} />
 
         {/* 4. Why Food Lovers Choose us cards */}
         <WhyChooseUs />
 
-        {/* 5. Authentic Customer Reviews */}
-        <CustomerReviews />
 
         {/* 6. Curated Image Gallery lightbox section */}
         <Gallery />
@@ -170,8 +207,33 @@ export default function App() {
       <Footer onNavClick={handleScrollToSection} />
 
       {/* Floating Action Elements */}
+      {totalCartCount > 0 && (
+        <button
+          id="cart-floating-button"
+          onClick={() => setIsCartOpen(true)}
+          className="fixed bottom-24 right-6 z-40 bg-gradient-to-tr from-red-650 via-orange-500 to-amber-500 text-white p-3.5 sm:p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center group ring-4 ring-yellow-400/50 animate-bounce cursor-pointer"
+          title="Open Cart"
+        >
+          <ShoppingBag className="h-6 w-6 sm:h-7 sm:w-7" />
+          <span className="absolute -top-1 -right-1 bg-red-650 text-white text-[10px] font-black h-5 w-5 rounded-full flex items-center justify-center border border-white animate-pulse">
+            {totalCartCount}
+          </span>
+          <span className="absolute right-14 bg-stone-900 text-white text-[10px] font-extrabold tracking-wider uppercase py-1.5 px-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-stone-800 pointer-events-none shadow-md">
+            View Cart (₹{cartItems.reduce((acc, item) => acc + item.menuItem.price * item.quantity, 0)})
+          </span>
+        </button>
+      )}
       <WhatsAppButton />
       <ScrollToTop />
+
+      <CartDrawer
+        isOpen={isCartOpen}
+        onClose={() => setIsCartOpen(false)}
+        cartItems={cartItems}
+        onUpdateQuantity={handleUpdateQuantity}
+        onRemoveItem={handleRemoveItem}
+        onClearCart={handleClearCart}
+      />
     </div>
   );
 }

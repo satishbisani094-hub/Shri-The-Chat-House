@@ -1,11 +1,25 @@
 import { MenuItem, Testimonial, GalleryItem, WhyChooseUsItem } from './types';
 
-// Let's import our custom-generated images using relative paths or placeholders to guarantee fallback.
-// In React/Vite, we can access generated assets directly. 
-export const HERO_IMAGE = '/src/assets/images/hero_chaat_house_1780406477157.png';
-export const DAHI_PURI_IMAGE = '/src/assets/images/dahi_puri_plate_1780406498649.png';
-export const HYGIENIC_PREP_IMAGE = '/src/assets/images/hygienic_prep_1780406516114.png';
-export const SAMOSA_BAJJI_IMAGE = '/src/assets/images/samosa_bajji_1780406534863.png';
+// Import the custom-generated images using relative paths to ensure Vite resolves them correctly
+import heroImage from './assets/images/hero_chaat_house_1780406477157.png';
+import dahiPuriImage from './assets/images/dahi_puri_plate_1780406498649.png';
+import hygienicPrepImage from './assets/images/hygienic_prep_1780406516114.png';
+import samosaBajjiImage from './assets/images/samosa_bajji_1780406534863.png';
+import paniPuriImage from './assets/images/pani_puri_1780459311481.png';
+import masalaPuriImage from './assets/images/masala_puri_1780459336003.png';
+import ragadaChaatImage from './assets/images/ragada_chaat_1780459355989.png';
+import mirchiBajjiImage from './assets/images/mirchi_bajji_1780459381079.png';
+import onionPakodiImage from './assets/images/onion_pakodi_1780459399993.png';
+
+export const HERO_IMAGE = heroImage;
+export const DAHI_PURI_IMAGE = dahiPuriImage;
+export const HYGIENIC_PREP_IMAGE = hygienicPrepImage;
+export const SAMOSA_BAJJI_IMAGE = samosaBajjiImage;
+export const PANI_PURI_IMAGE = paniPuriImage;
+export const MASALA_PURI_IMAGE = masalaPuriImage;
+export const RAGADA_CHAAT_IMAGE = ragadaChaatImage;
+export const MIRCHI_BAJJI_IMAGE = mirchiBajjiImage;
+export const ONION_PAKODI_IMAGE = onionPakodiImage;
 
 export const MENU_ITEMS: MenuItem[] = [
   // --- CHAAT SPECIALS ---
@@ -15,7 +29,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Crispy hollow puris filled with spicy mint water, tangy tamarind chutney, and a perfect potato-chickpea stuffing.',
     price: 40,
     category: 'Chaat Specials',
-    imageUrl: 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78?w=500&auto=format&fit=crop&q=80',
+    imageUrl: PANI_PURI_IMAGE,
     isPopular: true,
     isVegetarian: true,
     spicyLevel: 3,
@@ -47,7 +61,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Crushed crispy puris drenched in a spiced piping hot green peas gravy, garnished with raw carrots, coriander, and sev.',
     price: 50,
     category: 'Chaat Specials',
-    imageUrl: 'https://images.unsplash.com/photo-1517244683807-7ae58e2b152e?w=500&auto=format&fit=crop&q=80',
+    imageUrl: MASALA_PURI_IMAGE,
     isVegetarian: true,
     spicyLevel: 2,
   },
@@ -67,7 +81,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Warm thick yellow peas model cooked with Hyderabad rich spices, topped with onions, coriander, curd, and papdi.',
     price: 60,
     category: 'Chaat Specials',
-    imageUrl: 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78?w=500&auto=format&fit=crop&q=60',
+    imageUrl: RAGADA_CHAAT_IMAGE,
     isVegetarian: true,
     spicyLevel: 2,
   },
@@ -100,7 +114,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Famous local Hyderabad long green chillies battered in spiced gram flour, deep fried, slit open and stuffed with seasoned lemon onions.',
     price: 40,
     category: 'Snacks',
-    imageUrl: 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78?w=500&auto=format&fit=crop&q=80',
+    imageUrl: MIRCHI_BAJJI_IMAGE,
     isPopular: true,
     isVegetarian: true,
     spicyLevel: 3,
@@ -121,7 +135,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Crispy, crunchy deep fried onion fritters infused with green chillies, curry leaves, and chickpea flour. Perfect evening snack.',
     price: 40,
     category: 'Snacks',
-    imageUrl: 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78?w=500&auto=format&fit=crop&q=50',
+    imageUrl: ONION_PAKODI_IMAGE,
     isVegetarian: true,
     spicyLevel: 2,
   },
@@ -296,7 +310,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 'gal-1',
     title: 'Crispy Golden Pani Puri',
-    imageUrl: 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78?w=800&auto=format&fit=crop&q=80',
+    imageUrl: PANI_PURI_IMAGE,
     category: 'Pani Puri'
   },
   {

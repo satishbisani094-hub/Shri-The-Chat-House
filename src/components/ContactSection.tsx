@@ -7,7 +7,7 @@ export default function ContactSection() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
-  
+
   // Submission flow states
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStep, setSubmitStep] = useState<'idle' | 'sending' | 'email-sync' | 'success'>('idle');
@@ -44,7 +44,7 @@ export default function ContactSection() {
       setFormError('Please write your full name.');
       return;
     }
-    
+
     const phoneNo = phone.trim().replace(/\D/g, '');
     if (phoneNo.length < 10) {
       setFormError('Please enter a valid 10-digit phone number.');
@@ -62,7 +62,7 @@ export default function ContactSection() {
 
     setTimeout(() => {
       setSubmitStep('email-sync');
-      
+
       // Save item to our persistent localStorage Admin queue!
       const newInquiry: ContactInquiry = {
         id: 'inq-' + Date.now(),
@@ -94,7 +94,7 @@ export default function ContactSection() {
   };
 
   const toggleInquiryRead = (id: string) => {
-    const updated = inquiries.map(item => 
+    const updated = inquiries.map(item =>
       item.id === id ? { ...item, isRead: !item.isRead } : item
     );
     saveInquiries(updated);
@@ -114,7 +114,7 @@ export default function ContactSection() {
   return (
     <section id="contact" className="py-20 md:py-28 bg-white scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Header Text */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <span className="inline-flex items-center space-x-1.5 bg-red-100 text-red-700 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
@@ -131,7 +131,7 @@ export default function ContactSection() {
 
         {/* Contact Layout Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch mb-16">
-          
+
           {/* Column 1: Info Cards (40%) */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
             <div className="bg-gradient-to-br from-stone-900 to-stone-950 p-8 sm:p-10 rounded-3xl text-white flex flex-col justify-between h-full relative overflow-hidden shadow-xl border border-stone-800">
@@ -177,7 +177,7 @@ export default function ContactSection() {
 
           {/* Column 2: Interactive Contact Form (70%) */}
           <div className="lg:col-span-7 bg-stone-50 p-8 sm:p-10 rounded-3xl border border-orange-100/30 shadow-sm flex flex-col justify-center relative">
-            
+
             {submitStep === 'success' ? (
               // Success feedback screen
               <div id="contact-success-card" className="text-center py-10 space-y-6">
@@ -210,7 +210,7 @@ export default function ContactSection() {
             ) : (
               // Main Interactive Form
               <form id="contact-submission-form" onSubmit={handleFormSubmit} className="space-y-5 text-left">
-                
+
                 {formError && (
                   <div className="p-3.5 bg-red-50 border border-red-200 text-red-700 rounded-2xl text-xs font-bold flex items-center space-x-2">
                     <ShieldAlert className="h-4.5 w-4.5 shrink-0" />
@@ -343,9 +343,8 @@ export default function ContactSection() {
                   {inquiries.map((inq) => (
                     <div
                       key={inq.id}
-                      className={`p-5 rounded-2xl border transition-all ${
-                        inq.isRead ? 'bg-stone-950/40 border-stone-800/80 opacity-[0.85]' : 'bg-stone-950/80 border-orange-500/20 shadow-lg shadow-orange-500/5'
-                      }`}
+                      className={`p-5 rounded-2xl border transition-all ${inq.isRead ? 'bg-stone-950/40 border-stone-800/80 opacity-[0.85]' : 'bg-stone-950/80 border-orange-500/20 shadow-lg shadow-orange-500/5'
+                        }`}
                     >
                       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 pb-3 mb-3 border-b border-stone-800/60">
                         <div className="space-y-0.5">
@@ -356,9 +355,8 @@ export default function ContactSection() {
                           <span className="text-[10px] font-semibold">{inq.date}</span>
                           <button
                             onClick={() => toggleInquiryRead(inq.id)}
-                            className={`px-2 py-1.5 rounded-lg text-[9px] font-extrabold uppercase tracking-wider ${
-                              inq.isRead ? 'bg-stone-800 text-stone-400 hover:bg-stone-700' : 'bg-green-600 text-white hover:bg-green-700'
-                            }`}
+                            className={`px-2 py-1.5 rounded-lg text-[9px] font-extrabold uppercase tracking-wider ${inq.isRead ? 'bg-stone-800 text-stone-400 hover:bg-stone-700' : 'bg-green-600 text-white hover:bg-green-700'
+                              }`}
                           >
                             {inq.isRead ? 'Mark Unread' : 'Mark Reviewed'}
                           </button>
